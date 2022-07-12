@@ -24,6 +24,7 @@
   <ItemGroup>
     <ClInclude Include="lexic.h" />
     <ClInclude Include="Structures.h" />
+    <ClInclude Include="syntax.h" />
     <ClInclude Include="transliterator.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

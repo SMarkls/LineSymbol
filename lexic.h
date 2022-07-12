@@ -264,4 +264,45 @@ void splitWordsClasses(int i) // принимает элемент из массивва Dict words[i];
 		return;
 	}
 }
+int InKeyWords(char* word)
+{
+	char keyWords[2][6] = { "while", "do" };
+	for (int i = 0; i < 2; i++)
+		if (strcmp(word, keyWords[i]) == 0)
+			return i + 1;
+	return 0;
+}
 
+int InOpWords(char* word)
+{
+	char opWords[2][4] = { "div", "mod" };
+	for (int i = 0; i < 2; i++)
+		if (strcmp(word, opWords[i]) == 0)
+			return 1;
+	return 0;
+}
+
+int InCompare(char* word)
+{
+	char CompareSigns[5][3] = { "<", ">", "<>", ">=", "<=" };
+	for (int i = 0; i < 5; i++)
+		if (strcmp(word, CompareSigns[i]) == 0)
+			return 1;
+	return 0;
+}
+
+void editClasses()
+{
+	char keyWords[2][6] = { "while", "do" };
+	for (int i = 0; i < countLexems; i++)
+	{
+		if (InKeyWords(lex[i].word))
+		{
+			char temp[50] = { "клслово_" };
+			strcat(temp, keyWords[InKeyWords(lex[i].word) - 1]);
+			strcpy(lex[i].key, temp);
+		}
+		else if (InOpWords(lex[i].word)) strcpy(lex[i].key, "знак");
+		else if (InCompare(lex[i].word)) strcat(lex[i].key, " ср");
+	}
+}

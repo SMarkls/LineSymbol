@@ -9,7 +9,7 @@ struct Dict words[100];
 extern struct Lexems
 {
 	char word[50];
-	char key[20];
+	char key[25];
 };
 int countLexems = 0;
 struct Lexems lex[30];
