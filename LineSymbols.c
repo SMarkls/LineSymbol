@@ -8,7 +8,7 @@
 void main(void)
 {
 	setlocale(LC_ALL, "RUS");
-	char* line = "while id<>Max do id2:=Mem[$A10 mod 2];";
+	char* line = "while A<>B do C:=Arr[10-B];";
 	for (int i = 0; i < strlen(line); i++)
 	{
 		splitSymsClasses(line[i]);
@@ -19,7 +19,7 @@ void main(void)
 	{
 		if (strcmp(words[i].key, "äð.ñèìâîë") == 0)
 		{
-			printf("ÎØÈÁÊÀ");
+			printf("REJECTED");
 			return;
 		}
 		splitWordsClasses(i);
@@ -29,7 +29,7 @@ void main(void)
 
 	for (int i = 0; i <= countLexems; i++)
 	{
-		printf("%s %s\n", lex[i].word, lex[i].key);
+		printf("['%s', '%s'] ", lex[i].word, lex[i].key);
 	}
 	printf("%s", Result());
 }

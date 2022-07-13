@@ -65,10 +65,12 @@ void splitWordsClasses(int i) // принимает элемент из массивва Dict words[i];
 			strcpy(tempState, "ошибка");
 		}
 
-		if(strcmp(tempState, "пробел") != 0)
+		if (strcmp(tempState, "пробел") != 0)
+		{
 			countLexems++;
+			strcpy(lex[countLexems].key, tempState);
+		}
 		int temp = strlen(lex[countLexems].word);
-		strcpy(lex[countLexems].key, tempState);
 		lex[countLexems].word[temp] = words[i].letter;
 		lex[countLexems].word[temp + 1] = '\0';
 		return;

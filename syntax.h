@@ -136,12 +136,12 @@ char* Result()
 	{
 		if (strcmp(lex[i].word, " ") != 0 && strcmp(lex[i].word, "") != 0 && check(i) == 0)
 		{
-			strcpy(result, "ÎØÈÁÊÀ â êîíöå");
+			strcpy(result, "REJECTED");
 			return result;
 		}
 	}
 	if (stateSyntax != semicolon)
-		strcpy(result, "ÎØÈÁÊÀ â êîíöå");
-	else strcpy(result, "ÂÑ¨ ÎÊ");
+		strcpy(result, "REJECTED");
+	else strcpy(result, "ACCEPTED");
 	return result;
 }
