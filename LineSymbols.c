@@ -8,7 +8,7 @@
 void main(void)
 {
 	setlocale(LC_ALL, "RUS");
-	char* line = "while A<>B do C:=Arr[10-B];";
+	char* line = "while A<>B do C:=Arr[$1F0 - 2];";
 	for (int i = 0; i < strlen(line); i++)
 	{
 		splitSymsClasses(line[i]);
@@ -27,9 +27,9 @@ void main(void)
 
 	editClasses();
 
-	for (int i = 0; i <= countLexems; i++)
+	/*for (int i = 0; i <= countLexems; i++)
 	{
 		printf("['%s', '%s'] ", lex[i].word, lex[i].key);
-	}
+	}*/
 	printf("%s", Result());
 }

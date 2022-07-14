@@ -178,7 +178,10 @@ void splitWordsClasses(int i) // принимает элемент из массивва Dict words[i];
 		}
 		else if (strcmp(words[i].key, "буква") == 0)
 		{
-			strcpy(tempState, "шестн. конст");
+			if ((words[i].letter >= 97 && words[i].letter <= 102) || (words[i].letter >= 65 && words[i].letter <= 70))
+				strcpy(tempState, "шестн. конст");
+			else
+				strcpy(tempState, "ошибка");
 		}
 		else if (strcmp(words[i].key, "пробел") == 0)
 		{
