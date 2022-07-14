@@ -1,0 +1,1 @@
+while A<>B do C := Arr[$10-2];
