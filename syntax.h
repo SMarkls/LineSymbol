@@ -84,7 +84,7 @@ int check(int i)
 			return 1;
 		}
 	if (stateSyntax == ident4)
-		if (strcmp(lex[i].key, "скобка") != 0) return 0;
+		if (strcmp(lex[i].key, "скобка") != 0 || strcmp(lex[i].word, "[") != 0) return 0;
 		else
 		{
 			stateSyntax = bracket1;
@@ -112,7 +112,7 @@ int check(int i)
 			return 1;
 		}
 	if (stateSyntax == numSyntax)
-		if (strcmp(lex[i].key, "скобка") != 0) return 0;
+		if (strcmp(lex[i].key, "скобка") != 0 || strcmp(lex[i].word, "]") != 0) return 0;
 		else
 		{
 			stateSyntax = bracket2;
